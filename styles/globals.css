@@ -1,14 +1,16 @@
 :root {
 	--primary-color: #96bb7c;
+	--primary-color-btn: #15570f;
 	--danger-color: #e74040;
 	--success-color: #2dc071;
 	--warning-color: #e77c40;
 	--hover-color: #2a7cc7;
 	--dark-background-color: #2d4059;
+	--light-background-color: #ffffff;
+	--mild-background-color: #fff2f3;
 	--text-color: #252b42;
 	--secondary-color: #ffab71;
 	--secondary-color-2: #ff7171;
-	--light-background-color: #ffffff;
 	--light-gray-color: #fafafa;
 	--muted-color: #bdbdbd;
 	--light-text-color: #fafafa;
@@ -40,14 +42,23 @@
 }
 
 body {
-	letter-spacing: 0.2px;
-	font-size: 3.5vw;
+	letter-spacing: 0.2px !important;
+	font-size: 12.8px !important;
+	font-family: 'Montserrat', sans-serif !important;
+	background: var(--) !important;
+	min-height: 100vh;
+	color: var(--text-color) !important;
+}
+
+.btn,
+.link {
+	cursor: pointer;
 }
 
 .link {
-	font-weight: bold;
-	line-height: 24px;
-	font-size: 14px;
+	font-weight: bold !important;
+	line-height: 24px !important;
+	color: var(--secondary-text-color) !important;
 }
 
 .paragraph {
@@ -57,12 +68,12 @@ body {
 
 .h1 {
 	font-weight: bold;
-	line-height: 80px;
-	font-size: 58px;
+	line-height: 24px;
+	font-size: 20px;
 }
 .h2 {
-	line-height: 50px;
-	font-size: 40px;
+	line-height: 20px;
+	font-size: 18px;
 }
 .h3 {
 	font-size: 24px;
@@ -72,13 +83,15 @@ body {
 	font-size: 20px;
 	line-height: 30px;
 }
-.h5 {
-	font-size: 16px;
-	line-height: 24px;
-}
 .h6 {
 	font-size: 14px;
 	line-height: 24px;
+	color: var(--primary-color);
+}
+.h5 {
+	font-size: 14px;
+	line-height: 24px;
+	font-weight: 500;
 }
 
 .small {
@@ -86,16 +99,117 @@ body {
 	font-size: 12px;
 }
 
-.btn-text {
-	font-size: 14px;
-	line-height: 22px;
+.btn:hover {
+	opacity: 0.9;
 }
 
-@media screen and (max-width: 1140px) {
+.btn--text {
+	font-size: 12px !important;
+	line-height: 22px !important;
+	font-weight: 700 !important;
+	letter-spacing: 0.2px !important;
 }
-@media screen and (max-width: 960px) {
+
+.btn--solid {
+	background: var(--primary-color-btn) !important;
+	color: var(--light-background-color) !important;
 }
-@media screen and (max-width: 768px) {
+
+.btn--outline {
+	border: 1px solid var(--primary-color-btn) !important;
+	color: var(--primary-color-btn) !important;
 }
-@media screen and (max-width: 600px) {
+
+.btn--link {
+	background: none !important;
+	color: var(--primary-color-btn) !important;
+}
+
+/* End of Default Styling */
+
+#content {
+	padding: 5px 15px;
+}
+.content--bg {
+	background: var(--mild-background-color);
+}
+
+.navbar--logo {
+	height: auto;
+	width: auto;
+}
+
+.svg {
+	height: 76px;
+	width: 70px;
+}
+
+.card--shadow {
+	box-shadow: var(--drop-shadow-card);
+}
+
+/* Queries */
+
+@media screen and (min-width: 425px) {
+	body {
+		font-size: 13.5px;
+	}
+
+	#content {
+		padding: 10px 30px;
+	}
+	.btn--text {
+		font-size: 13.5px !important;
+	}
+}
+@media screen and (min-width: 768px) {
+	#content {
+		padding: 10px 50px;
+	}
+	.h1 {
+		font-weight: bold;
+		line-height: 42px;
+		font-size: 30px;
+	}
+}
+
+@media screen and (min-width: 960px) {
+	body {
+		font-size: 16px;
+	}
+	#content {
+		padding: 20px 80px;
+	}
+	.btn--text {
+		font-size: 15.5px !important;
+	}
+	.h1 {
+		line-height: 72px;
+		font-size: 50px;
+	}
+	.h2 {
+		line-height: 50px;
+		font-size: 40px;
+	}
+	.paragraph {
+		font-size: 20px;
+		line-height: 20px;
+	}
+}
+
+@media screen and (min-width: 1140px) {
+	body {
+		font-size: 18px !important;
+	}
+	#content {
+		padding: 20px 100px;
+	}
+	.h1 {
+		line-height: 80px;
+		font-size: 58px;
+	}
+
+	.h5 {
+		font-size: 24px;
+	}
 }
