@@ -1,9 +1,23 @@
-import { ButtonComponent, Layout, RedLine, Card } from '@/components';
-import { Stack, Box, Text, ButtonGroup, Image, Button } from '@chakra-ui/react';
+import {
+	ButtonComponent,
+	Layout,
+	RedLine,
+	Card,
+	ImageComponent,
+	Package,
+} from '@/components';
+import {
+	Stack,
+	Box,
+	Text,
+	ButtonGroup,
+	Button,
+	VStack,
+	HStack,
+} from '@chakra-ui/react';
 import Board from '../public/svg/expert-teacher.svg';
 import Instruction from '../public/svg/expert-instruction.svg';
 import Caret from '../public/svg/cavet-right-icon.svg';
-import LiveCall from '../public/svg/live-video.svg';
 
 export default function Home() {
 	return (
@@ -45,10 +59,9 @@ export default function Home() {
 					</ButtonGroup>
 				</Box>
 				<Box>
-					<Image
+					<ImageComponent
 						src='/svg/hero-cover.svg'
 						alt='hero image'
-						width={{ base: '90vw' }}
 					/>
 				</Box>
 			</Stack>
@@ -58,7 +71,7 @@ export default function Home() {
 				display={'flex'}
 				direction={{ base: 'column', xl: 'row' }}
 				align={'center'}
-				justify={{ base: 'flex-start', lg: 'space-between' }}
+				justify={{ base: 'flex-start', lg: 'space-around' }}
 				id='content'
 				minH={'80vh'}
 				gap={'20px'}
@@ -110,6 +123,7 @@ export default function Home() {
 				</Stack>
 			</Stack>
 			{/* End of section 2 */}
+
 			<Stack
 				display={'flex'}
 				direction={{ base: 'column', md: 'row' }}
@@ -121,10 +135,9 @@ export default function Home() {
 				mt={'20px'}
 			>
 				<Box>
-					<Image
+					<ImageComponent
 						src='/svg/live-video.svg'
 						alt='hero image'
-						width={{ base: '90vw' }}
 					/>
 				</Box>
 				<Box
@@ -153,6 +166,48 @@ export default function Home() {
 					</Button>
 				</Box>
 			</Stack>
+			{/* End of section 3 */}
+
+			<Stack id='content' minH={'80vh'} gap={'20px'} mt={'20px'}>
+				<Box w='inherit'>
+					<Text className='h6 h5' mb={3}>
+						Practise Advice
+					</Text>
+					<Text className='h1 h2'>Affordable Packages</Text>
+					<Text
+						className='paragraph'
+						w={{ base: '100%', lg: '490px' }}
+					>
+						Problems trying to resolve the conflict between the two
+						major realms of Classical physics: Newtonian mechanics
+					</Text>
+				</Box>
+				<Stack className='wrap'>
+					<Package
+						title='Watch our Courses'
+						alt='image'
+						numberOfCourses={2000}
+						src='/png/download.jpg'
+					/>
+					<Package
+						title='Our Expert Teachers'
+						alt='image two'
+						src='/png/download2.jpg'
+					/>
+					<Package
+						title='Our Expert Teachers'
+						alt='image two'
+						src='/png/download2.jpg'
+					/>
+					<Package
+						title='Our Expert Teachers'
+						alt='image two'
+						numberOfCourses={5000}
+						src='/png/download2.jpg'
+					/>
+				</Stack>
+			</Stack>
+			{/* End of Section 4 */}
 		</Layout>
 	);
 }

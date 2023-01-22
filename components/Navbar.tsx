@@ -18,7 +18,7 @@ const Navbar = (props: Props) => {
 	return (
 		<HStack
 			align={'center'}
-			// justify={'space-between'}
+			justify={'space-between'}
 			direction={'row'}
 			className='content--bg'
 			id='content'
@@ -41,7 +41,7 @@ const Navbar = (props: Props) => {
 					</ListItem>
 				))}
 			</UnorderedList>
-			<ButtonGroup gap={{ base: '20px', sm: '40px', lg: '122px' }}>
+			<ButtonGroup gap={{ base: '0px', sm: '20px', xl: '122px' }}>
 				<ButtonComponent
 					variant='link'
 					value='Login'
