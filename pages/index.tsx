@@ -5,6 +5,9 @@ import {
 	Card,
 	ImageComponent,
 	Package,
+	Testimonial,
+	Subscribe,
+	Personnel,
 } from '@/components';
 import {
 	Stack,
@@ -14,6 +17,7 @@ import {
 	Button,
 	VStack,
 	HStack,
+	Center,
 } from '@chakra-ui/react';
 import Board from '../public/svg/expert-teacher.svg';
 import Instruction from '../public/svg/expert-instruction.svg';
@@ -38,7 +42,7 @@ export default function Home() {
 					pt={5}
 					w={'100%'}
 				>
-					<Text className='h6 h5' mb={2}>
+					<Text className='h6 fw--bold primary' mb={2}>
 						Welcome
 					</Text>
 					<Text className='h1'>Best Learning Opportunities</Text>
@@ -82,7 +86,7 @@ export default function Home() {
 					flexDirection={'column'}
 					gap={{ base: '10px', md: '16px', lg: '35px' }}
 					pb={'20px'}
-					w={{ base: '100%', md: '60%', xl: '100%' }}
+					w={{ base: '100%', md: '80%', xl: '100%' }}
 					justifyContent={{
 						base: 'flex-start',
 						md: 'center',
@@ -90,7 +94,7 @@ export default function Home() {
 					}}
 				>
 					<RedLine length='full' />
-					<Text className='h2 h1'>Affordable Packages</Text>
+					<Text className='h2'>Affordable Packages</Text>
 					<Text className='paragraph'>
 						Problems trying to resolve the conflict between the two
 						major realms of Classical physics: Newtonian mechanics
@@ -149,7 +153,7 @@ export default function Home() {
 					gap={{ base: '10px', md: '16px', lg: '20px' }}
 				>
 					<RedLine length='full' />
-					<Text className='h1 h2' my={2}>
+					<Text className='h2' my={2}>
 						Video in Live Action
 					</Text>
 					<Text className='paragraph' pr={{ xl: '40px' }}>
@@ -168,21 +172,30 @@ export default function Home() {
 			</Stack>
 			{/* End of section 3 */}
 
-			<Stack id='content' minH={'80vh'} gap={'20px'} mt={'20px'}>
+			<Stack
+				id='content'
+				minH={'80vh'}
+				gap={'20px'}
+				mt={'20px'}
+				justify={'center'}
+			>
 				<Box w='inherit'>
-					<Text className='h6 h5' mb={3}>
+					<Text className='h6 fw--bold primary' mb={3}>
 						Practise Advice
 					</Text>
-					<Text className='h1 h2'>Affordable Packages</Text>
+					<Text className='h2'>Affordable Packages</Text>
 					<Text
 						className='paragraph'
-						w={{ base: '100%', lg: '490px' }}
+						w={{ base: '100%', md: '70%', lg: '490px' }}
 					>
 						Problems trying to resolve the conflict between the two
 						major realms of Classical physics: Newtonian mechanics
 					</Text>
 				</Box>
-				<Stack className='wrap'>
+				<Stack
+					className='wrap'
+					justify={{ md: 'center', lg: 'flex-start' }}
+				>
 					<Package
 						title='Watch our Courses'
 						alt='image'
@@ -197,17 +210,96 @@ export default function Home() {
 					<Package
 						title='Our Expert Teachers'
 						alt='image two'
-						src='/png/download2.jpg'
-					/>
-					<Package
-						title='Our Expert Teachers'
-						alt='image two'
-						numberOfCourses={5000}
-						src='/png/download2.jpg'
+						src='/png/school-mobile-view.png'
 					/>
 				</Stack>
 			</Stack>
 			{/* End of Section 4 */}
+
+			<Stack
+				id='content'
+				minH={'90vh'}
+				gap={'20px'}
+				mt={'20px'}
+				justify={'center'}
+			>
+				<Box mb={5}>
+					<Text className='h6 fw--bold primary' mb={3}>
+						Testimonials
+					</Text>
+					<Text className='h2'>Watch our Courses</Text>
+					<Text
+						className='paragraph'
+						w={{ base: '100%', md: '70%', lg: '490px' }}
+					>
+						Problems trying to resolve the conflict between the two
+						major realms of Classical physics: Newtonian mechanics
+					</Text>
+				</Box>
+				<Stack
+					direction={{ base: 'column', md: 'row' }}
+					justify={'center'}
+					gap={{ base: '20px' }}
+				>
+					<Testimonial
+						rate={3}
+						role='Designer'
+						name='Beatrice'
+						src='/png/testimonial-user-1.png'
+						alt='user1'
+					/>
+					<Testimonial
+						rate={4}
+						role='Instructor'
+						name='Dean Shaw'
+						src='/png/testimonial-user-2.png'
+						alt='user 2'
+					/>
+				</Stack>
+			</Stack>
+			{/* End of Section 6 */}
+
+			<Stack
+				id='content'
+				className='content--bg'
+				minH={'90vh'}
+				gap={'20px'}
+				mt={'20px'}
+				justify={'center'}
+			>
+				<VStack w={{ base: '100%', md: '60%' }} m='0 auto'>
+					<Text className='h6 fw--bold primary'>Newsletter</Text>
+					<Text className='h2'>Subscribe to our Newsletter</Text>
+					<Text className='paragraph' textAlign={'center'}>
+						For more information and update on our packages, courses
+						and discount packages
+					</Text>
+				</VStack>
+				<Subscribe />
+			</Stack>
+			{/* End of section 7 */}
+			<Stack
+				id='content'
+				minH={'90vh'}
+				gap={'20px'}
+				mt={'20px'}
+				justify={'center'}
+			>
+				<Box>
+					<Text className='h6 fw--bold primary'>Team</Text>
+					<Text className='h2'>Get Quality Education</Text>
+					<Text
+						className='paragraph'
+						w={{ base: '100%', md: '70%', lg: '490px' }}
+					>
+						Problems trying to resolve the conflict between the two
+						major realms of Classical physics: Newtonian mechanics
+					</Text>
+				</Box>
+				<Stack direction={{ base: 'column', lg: 'row' }}>
+					<Personnel />
+				</Stack>
+			</Stack>
 		</Layout>
 	);
 }

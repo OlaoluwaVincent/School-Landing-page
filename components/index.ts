@@ -5,3 +5,6 @@ export { default as RedLine } from './RedLine';
 export { default as Card } from './Card';
 export { default as ImageComponent } from './ImageComponent';
 export { default as Package } from './Package';
+export { default as Testimonial } from './Testimonial';
+export { default as Subscribe } from './Subscribe';
+export { default as Personnel } from './Personnel';

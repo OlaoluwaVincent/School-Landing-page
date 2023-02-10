@@ -30,11 +30,11 @@ const Package = (props: Props) => {
 	return (
 		<HStack
 			gap={{ base: '0px', lg: '10px' }}
-			className='card--shadow card--bg'
+			className='card--shadow'
 			padding={{ base: '20px 10px', lg: '0px' }}
 			borderRadius={'8px'}
 		>
-			<Box position={'relative'}>
+			<Box position={'relative'} overflow={'hidden'}>
 				<Image
 					src={props.src}
 					alt={props.alt}
@@ -44,17 +44,23 @@ const Package = (props: Props) => {
 					objectFit={'cover'}
 					objectPosition={'top center'}
 					display={{ base: 'none', lg: 'block' }}
+					className='hoverImage'
 				/>
-				<HStack
+				<Stack
 					position='absolute'
-					bottom={4}
-					w={'100%'}
-					justify='center'
+					justify={'space-between'}
+					p={5}
+					top={0}
+					align={'center'}
+					h={'100%'}
 				>
-					<Like />
-					<Cart />
-					<Seen />
-				</HStack>
+					<Text className='sale'>Sale</Text>
+					<Center w={'100%'} gap={3}>
+						<Like className='svg--icon' />
+						<Cart className='svg--icon' />
+						<Seen className='svg--icon' />
+					</Center>
+				</Stack>
 			</Box>
 
 			<VStack
@@ -62,19 +68,13 @@ const Package = (props: Props) => {
 				w={{ base: '100%', md: '290px' }}
 				// bg={'aliceblue'}
 			>
-				<Text className='h6' fontWeight={'bold'}>
+				<Text className='h6 fw--mid primary'>
 					{props.numberOfCourses
 						? props.numberOfCourses + ' Online Courses'
 						: 'Lifetime Access'}
 				</Text>
-				<Text
-					className='h3'
-					fontWeight={700}
-					fontSize={{ base: 'lg', lg: '3xl' }}
-				>
-					{props.title}
-				</Text>
-				<Text className='paragraph' fontSize={{ base: 'md', lg: 'lg' }}>
+				<Text className='h5 fw--bold'>{props.title}</Text>
+				<Text className='paragraph'>
 					We focus on ergonomics and meeting you where you work. It is
 					only a keystroke away.
 				</Text>
@@ -82,11 +82,9 @@ const Package = (props: Props) => {
 					<Center className='icon'>
 						<Download />
 					</Center>
-					<Text className='h6 disabled' fontWeight={700}>
-						15 Sales
-					</Text>
+					<Text className='h6 disabled fw--mid'>15 Sales</Text>
 				</HStack>
-				<Text className='h6 discount'>$16.48</Text>
+				<Text className='h6 discount fw--mid warning'>$16.48</Text>
 				<HStack
 					gap={2}
 					flexWrap={{ base: 'wrap', lg: 'nowrap' }}
@@ -99,7 +97,7 @@ const Package = (props: Props) => {
 						<Center className='icon'>
 							<Clock />
 						</Center>
-						<Text className='h6 disabled'>22hrs</Text>
+						<Text className='h6 disabled fw--mid'>22hrs</Text>
 					</Stack>
 					<Stack
 						direction={{ xl: 'row', lg: 'column' }}
@@ -108,7 +106,7 @@ const Package = (props: Props) => {
 						<Center className='icon'>
 							<Lessons />
 						</Center>
-						<Text className='h6 disabled'>Lessons</Text>
+						<Text className='h6 disabled fw--mid'>Lessons</Text>
 					</Stack>
 					<Stack
 						direction={{ xl: 'row', lg: 'column' }}
@@ -117,7 +115,7 @@ const Package = (props: Props) => {
 						<Center className='icon'>
 							<Stats />
 						</Center>
-						<Text className='h6 disabled'>Progress</Text>
+						<Text className='h6 disabled fw--mid'>Progress</Text>
 					</Stack>
 				</HStack>
 				<Button

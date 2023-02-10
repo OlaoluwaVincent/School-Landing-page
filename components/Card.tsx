@@ -18,7 +18,7 @@ const Card = (props: Props) => {
 			padding={{ base: '10px', md: '30px' }}
 		>
 			<Center className='svg'>{props.icon}</Center>
-			<Text className='h5' textAlign={'center'}>
+			<Text className='h5 fw--bold' textAlign={'center'}>
 				{props.heading}
 			</Text>
 			<RedLine length='half' />
