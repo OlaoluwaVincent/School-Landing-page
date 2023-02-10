@@ -9,6 +9,8 @@ import {
 // import Image from 'next/image';
 import RightIcon from '../public/svg/right-arrow-icon.svg';
 import { ButtonComponent } from './index';
+import { NAVBAR__ITEMS } from '@/utils/datas';
+
 //
 type Props = {};
 
@@ -33,10 +35,11 @@ const Navbar = (props: Props) => {
 				display={{ base: 'none', md: 'flex' }}
 				gap={'20px'}
 			>
-				<ListItem className='btn--text link'>Home</ListItem>
-				<ListItem className='btn--text link'>Product</ListItem>
-				<ListItem className='btn--text link'>Pricing</ListItem>
-				<ListItem className='btn--text link'>Contact</ListItem>
+				{NAVBAR__ITEMS.map((item, id) => (
+					<ListItem key={`${item}-${id}`} className='btn--text link'>
+						{item}
+					</ListItem>
+				))}
 			</UnorderedList>
 			<ButtonGroup gap={{ base: '0px', sm: '20px', xl: '122px' }}>
 				<ButtonComponent
