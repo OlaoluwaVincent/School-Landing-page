@@ -8,6 +8,11 @@ import {
 	Testimonial,
 	Subscribe,
 	Personnel,
+	CompanyInfo,
+	LegalInfo,
+	Feautures,
+	Resources,
+	Contact,
 } from '@/components';
 import {
 	Stack,
@@ -16,8 +21,6 @@ import {
 	ButtonGroup,
 	Button,
 	VStack,
-	HStack,
-	Center,
 } from '@chakra-ui/react';
 import Board from '../public/svg/expert-teacher.svg';
 import Instruction from '../public/svg/expert-instruction.svg';
@@ -258,26 +261,6 @@ export default function Home() {
 				</Stack>
 			</Stack>
 			{/* End of Section 6 */}
-
-			<Stack
-				id='content'
-				className='content--bg'
-				minH={'90vh'}
-				gap={'20px'}
-				mt={'20px'}
-				justify={'center'}
-			>
-				<VStack w={{ base: '100%', md: '60%' }} m='0 auto'>
-					<Text className='h6 fw--bold primary'>Newsletter</Text>
-					<Text className='h2'>Subscribe to our Newsletter</Text>
-					<Text className='paragraph' textAlign={'center'}>
-						For more information and update on our packages, courses
-						and discount packages
-					</Text>
-				</VStack>
-				<Subscribe />
-			</Stack>
-			{/* End of section 7 */}
 			<Stack
 				id='content'
 				minH={'90vh'}
@@ -296,9 +279,69 @@ export default function Home() {
 						major realms of Classical physics: Newtonian mechanics
 					</Text>
 				</Box>
-				<Stack direction={{ base: 'column', lg: 'row' }}>
-					<Personnel />
+				<Stack
+					direction={{ base: 'column', md: 'row' }}
+					gap={7}
+					justify={{ base: 'center', lg: 'space-around' }}
+					flexWrap={'wrap'}
+				>
+					<Personnel
+						src='/png/user-cover-1.png'
+						name='Olaoluwa Vincent'
+						profession='Software Developer'
+					/>
+					<Personnel
+						src='/png/user-cover-2.png'
+						name='Okiki Olasupo'
+						profession='UI/UX Developer'
+					/>
+					<Personnel
+						src='/png/user-cover-3.png'
+						name='Fehintola Vivian'
+						profession='Spending Olaoluwa Money'
+					/>
+					<Personnel
+						src='/png/user-cover-4.png'
+						name='Unknown'
+						profession='Someone somewhere'
+					/>
 				</Stack>
+			</Stack>
+
+			{/* End of section 7 */}
+			<Stack
+				id='content'
+				className='content--bg'
+				minH={'90vh'}
+				gap={'20px'}
+				mt={'20px'}
+				justify={'center'}
+			>
+				<VStack w={{ base: '100%', md: '60%' }} m='0 auto'>
+					<Text className='h6 fw--bold primary'>Newsletter</Text>
+					<Text className='h2'>Subscribe to our Newsletter</Text>
+					<Text className='paragraph' textAlign={'center'}>
+						For more information and update on our packages, courses
+						and discount packages
+					</Text>
+				</VStack>
+				<Subscribe />
+			</Stack>
+			{/* End of section 8 */}
+
+			<Stack
+				id='content'
+				className='content--bg'
+				minH={'40vh'}
+				gap={'20px'}
+				mt={'20px'}
+				justify={'center'}
+			>
+				<CompanyInfo />
+				<LegalInfo />
+				<Feautures />
+				<Resources />
+				<Contact />
 			</Stack>
 		</Layout>
 	);

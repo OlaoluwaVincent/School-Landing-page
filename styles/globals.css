@@ -241,7 +241,7 @@ body {
 
 .card--shadow {
 	box-shadow: var(--drop-shadow-card);
-	background: var(--mild-background-color);
+	background: var(--light-gray-color);
 }
 
 .hoverImage {

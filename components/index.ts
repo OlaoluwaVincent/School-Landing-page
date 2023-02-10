@@ -8,3 +8,8 @@ export { default as Package } from './Package';
 export { default as Testimonial } from './Testimonial';
 export { default as Subscribe } from './Subscribe';
 export { default as Personnel } from './Personnel';
+export { default as Contact } from './Contact';
+export { default as Feautures } from './Feautures';
+export { default as CompanyInfo } from './CompanyInfo';
+export { default as LegalInfo } from './LegalInfo';
+export { default as Resources } from './Resources';
