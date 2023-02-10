@@ -334,7 +334,7 @@ export default function Home() {
 				className='content--bg'
 				minH={'40vh'}
 				gap={'20px'}
-				mt={'20px'}
+				pt={'20px'}
 				justify={'center'}
 			>
 				<CompanyInfo />
